@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <!-- View (Angular)-->
+<!-- define o escopo de atuação do modulo (alurapic) criado -->
+<!-- indica que o angular gerenciara a pagina inteira, no atributo ng-app -->
+<!-- ng - diretivas do angular -->
 <html lang="pt-br" ng-app="alurapic">
     <head>
         <meta charset="UTF-8">
@@ -11,9 +14,9 @@
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
     </head>
-    <!-- ng >> diretivas do angular -->
-    <!-- instancia o FotosController -->
+    <!-- fragmento gerenciado pelo controller FotosController -->
     <body ng-controller="FotosController">
+        <!-- todos elementos terão acesso ao que foi adicionado ao escopo do controller -->
         <div class="container">
             <h1 class="text-center">Alurapic</h1>
             <!-- {{ }} - angular expression -->

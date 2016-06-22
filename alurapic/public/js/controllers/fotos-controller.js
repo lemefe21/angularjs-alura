@@ -1,17 +1,18 @@
-//não estamos criando um modulo novo
+//não estamos criando um controller com um modulo novo
+//estamos criando oo controller para o modulo alurapic já existente
 angular.module('alurapic').controller('FotosController', function($scope) {
 
 
   //variavel privada, só existe dentro desse escopo
-  //a view precisa acessar essa foto
+  //a view precisa acessar esse objeto
   /*var foto = {
     titulo: "Leões",
     url: "http://www.fundosanimais.com/Minis/leoes.jpg"
   };*/
 
-  //$scope dependecia do controller, injetada pela Angular
-  //$scope - POJO
-  //disponibiliza dados para a minha View
+  //controller pode receber $scope via injeção de dependencia pelo Angular
+  //$scope >> POJO
+  //controller disponibiliza dados para a View através do $scope
   $scope.foto = {
     titulo: "Leões",
     url: "http://www.fundosanimais.com/Minis/leoes.jpg"
