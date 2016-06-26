@@ -10,3 +10,15 @@ Subir servidor:
 $ nodejs server
 
 http://localhost:3000
+
+Principais técnologias utilizadas:
+
+- HTML5
+
+- CSS
+
+- Bootstrap
+
+- NodeJS
+
+- AngularJS
