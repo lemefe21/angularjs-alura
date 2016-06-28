@@ -46,6 +46,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 
   //trabalha com promise por debaixo dos panos
   $http.get('v1/fotos').success(function(fotos){
+    console.log(fotos);
     $scope.fotos = fotos;
   }).error(function(erro){
     console.log(error);
