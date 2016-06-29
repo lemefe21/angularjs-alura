@@ -28,24 +28,20 @@
 
             <!-- cada foto do array fotos -->
             <!-- fotos >> $scope.fotos do controller -->
-            <div ng-repeat="foto in fotos" class="panel panel-default col-md-2">
-              <!-- painel -->
-              <div class="panel-heading">
-                <h3 class="panel-title text-center">{{foto.titulo}}</h3>
-              </div>
-              <div class="panel-body">
+
+            <!-- componente criado pelo Angular >> diretivas Personalizadas -->
+            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
+                <!-- painel -->
                 <!-- {{ }} - angular expression -->
                 <!-- foto é um model -->
                 <!-- data bindind - dado alterado dinâmicamente -->
                 <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"/>
-              </div>
-
-              <!-- componente criado pelo Angular >> diretivas Personalizadas -->
-
-            </div>
+                <!-- elemento criado setando o transclude para true e informando no template -->
+            </meu-painel>
 
           </div>
 
         </div>
+
     </body>
 </html>
