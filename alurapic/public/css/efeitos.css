@@ -1,0 +1,12 @@
+.painel-animado.ng-leave-active{
+  -moz-transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-tranform: scale(0.1);
+  transform: scale(0.1);
+}
+
+/*
+elemento está para deixar a lista
+>> ng-leave-active
+*/

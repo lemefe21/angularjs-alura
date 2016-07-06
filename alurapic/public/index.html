@@ -10,6 +10,7 @@
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
@@ -25,21 +26,33 @@
             </div>
 
             <div class="row">
+              <div class="col-md-12">
 
-            <!-- cada foto do array fotos -->
-            <!-- fotos >> $scope.fotos do controller -->
+                <form>
+                  <input ng-model="filtro" class="form-control" placeholder="filtrar">
+                </form>
 
-            <!-- componente criado pelo Angular >> diretivas Personalizadas -->
-            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
-                <!-- painel -->
-                <!-- {{ }} - angular expression -->
-                <!-- foto é um model -->
-                <!-- data bindind - dado alterado dinâmicamente -->
-                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"/>
-                <!-- elemento criado setando o transclude para true e informando no template -->
-            </meu-painel>
+              </div>
+            </div>
 
-          </div>
+            <div class="row">
+              <!-- cada foto do array fotos -->
+              <!-- fotos é $scope.fotos do controller -->
+              <!-- componente criado pelo Angular >> diretivas Personalizadas -->
+
+              <!-- o pipe '|' indica filtro no valor do atributo da tag -->
+              <!-- filter: >> especialista para realizar filtragem -->
+
+              <meu-painel class="painel-animado" ng-repeat="foto in fotos | filter: filtro"  titulo="{{foto.titulo}}">
+                  <!-- painel -->
+                  <!-- {{ }} - AE - angular expression -->
+                  <!-- foto é um model -->
+                  <!-- data bindind - dado alterado dinâmicamente -->
+                  <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"/>
+                  <!-- elemento criado setando o transclude para true e informando no template -->
+              </meu-painel>
+
+            </div>
 
         </div>
 

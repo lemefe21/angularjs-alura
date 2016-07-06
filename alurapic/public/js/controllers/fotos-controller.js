@@ -44,6 +44,12 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
     console.log("Erro ao carregar as fotos... " + error);
   });*/
 
+  //AE {{ }}, somente lê do scope e exibe na tela >> unidirecional
+
+  //no filtro é necessario uma comunicação bidirecional >> ng-model
+  //conceito de two-way data binding
+  $scope.filtro = '';
+
   //trabalha com promise por debaixo dos panos
   $http.get('v1/fotos').success(function(fotos){
     console.log(fotos);
