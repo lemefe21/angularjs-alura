@@ -17,8 +17,8 @@ Principais técnologias utilizadas:
 
 - CSS
 
-- Bootstrap
+- Bootstrap http://getbootstrap.com/
 
-- NodeJS
+- NodeJS https://nodejs.org/en/
 
-- AngularJS
+- AngularJS https://angularjs.org/
