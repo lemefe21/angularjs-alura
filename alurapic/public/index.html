@@ -16,48 +16,23 @@
         <script src="js/lib/angular.min.js"></script>
         <!-- importando o módulo ngAnimte -->
         <script src="js/lib/angular-animate.min.js"></script>
+        <!-- importando o módulo ngAnimte -->
+        <script src="js/lib/angular-route.min.js"></script>
 
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js"></script>
     </head>
     <!-- fragmento gerenciado pelo controller FotosController -->
-    <body ng-controller="FotosController">
+    <body>
+      
+        <!--  ng-controller="FotosController" para a ser setado no sistema de rotas do Angular -->
         <!-- todos elementos terão acesso ao que foi adicionado ao escopo do controller -->
         <div class="container">
 
-            <div class="jumbotron">
-              <h1 class="text-center">Alurapic</h1>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-
-                <form>
-                  <input ng-model="filtro" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="filtrar">
-                </form>
-
-              </div>
-            </div>
-
-            <div class="row">
-              <!-- cada foto do array fotos -->
-              <!-- fotos é $scope.fotos do controller -->
-              <!-- componente criado pelo Angular >> diretivas Personalizadas -->
-
-              <!-- o pipe '|' indica filtro no valor do atributo da tag -->
-              <!-- filter: >> especialista para realizar filtragem -->
-
-              <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro"  titulo="{{foto.titulo}}">
-                  <!-- painel -->
-                  <!-- {{ }} - AE - angular expression -->
-                  <!-- foto é um model -->
-                  <!-- data bindind - dado alterado dinâmicamente -->
-                  <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"/>
-                  <!-- elemento criado setando o transclude para true e informando no template -->
-              </meu-painel>
-
-            </div>
+          <!-- ng-view >> lacunas >> ng-view >> troca de html dinâmicamente-->
+          <!-- sistema de rotas >> modulo ngRoute -->
+          <ng-view></ng-view>
 
         </div>
 

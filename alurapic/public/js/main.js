@@ -5,4 +5,8 @@
 
 //alurapic passa a depender do modulo >> minhasDiretivas
 
-angular.module('alurapic', ['minhasDiretivas', 'ngAnimate']);
+angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
+  //configura rotas que rodam no client >> $routeProvider
+  .config(function($routeProvider){
+
+  });

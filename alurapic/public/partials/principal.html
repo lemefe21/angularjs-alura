@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="text-center">Alurapic</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <form>
+      <input ng-model="filtro" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="filtrar">
+    </form>
+
+  </div>
+</div>
+
+<div class="row">
+  <!-- cada foto do array fotos -->
+  <!-- fotos é $scope.fotos do controller -->
+  <!-- componente criado pelo Angular >> diretivas Personalizadas -->
+
+  <!-- o pipe '|' indica filtro no valor do atributo da tag -->
+  <!-- filter: >> especialista para realizar filtragem -->
+
+  <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro"  titulo="{{foto.titulo}}">
+      <!-- painel -->
+      <!-- {{ }} - AE - angular expression -->
+      <!-- foto é um model -->
+      <!-- data bindind - dado alterado dinâmicamente -->
+      <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"/>
+      <!-- elemento criado setando o transclude para true e informando no template -->
+  </meu-painel>
+
+</div>
