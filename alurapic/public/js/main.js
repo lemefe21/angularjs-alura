@@ -5,4 +5,4 @@
 
 //alurapic passa a depender do modulo >> minhasDiretivas
 
-angular.module('alurapic', ['minhasDiretivas']);
+angular.module('alurapic', ['minhasDiretivas', 'ngAnimate']);

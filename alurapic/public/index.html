@@ -11,7 +11,12 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/efeitos.css">
+
+        <!-- importando o módulo core do angular -->
         <script src="js/lib/angular.min.js"></script>
+        <!-- importando o módulo ngAnimte -->
+        <script src="js/lib/angular-animate.min.js"></script>
+
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js"></script>
@@ -29,7 +34,7 @@
               <div class="col-md-12">
 
                 <form>
-                  <input ng-model="filtro" class="form-control" placeholder="filtrar">
+                  <input ng-model="filtro" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="filtrar">
                 </form>
 
               </div>
@@ -43,7 +48,7 @@
               <!-- o pipe '|' indica filtro no valor do atributo da tag -->
               <!-- filter: >> especialista para realizar filtragem -->
 
-              <meu-painel class="painel-animado" ng-repeat="foto in fotos | filter: filtro"  titulo="{{foto.titulo}}">
+              <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro"  titulo="{{foto.titulo}}">
                   <!-- painel -->
                   <!-- {{ }} - AE - angular expression -->
                   <!-- foto é um model -->
