@@ -6,7 +6,34 @@
 //alurapic passa a depender do modulo >> minhasDiretivas
 
 angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
+
   //configura rotas que rodam no client >> $routeProvider
-  .config(function($routeProvider){
+  .config(function($routeProvider, $locationProvider){
+
+    //modo html5 de rotas do Angular
+    //browser deve aceitar
+    //backend deve estar preparado assim como o server
+    $locationProvider.html5Mode(true);
+    //faz um fallback caso browser não aceite, voltando a trabalhar com /#/
+
+    //http://localhost:3000/#/fotos
+    //2_parametro objeto javascript
+    $routeProvider.when('/fotos', {
+
+      // na url >> /#/ >> interceptada pelo angular
+
+      templateUrl: 'partials/principal.html',
+      //controlador associado com a parcial
+      controller: 'FotosController'
+      //já basta para carregar a página /#/fotos
+
+    });
+
+    $routeProvider.when('/fotos/new', {
+      templateUrl: 'partials/foto.html'
+    });
+
+    //caso não foi localizada a rota informada na url
+    $routeProvider.otherwise({ redirectTo: '/fotos' });
 
   });

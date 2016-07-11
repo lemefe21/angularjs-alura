@@ -6,6 +6,7 @@
 <html lang="pt-br" ng-app="alurapic">
     <head>
         <meta charset="UTF-8">
+        <base href="/"/><!-- elimina o uso do /#/ << html5 -->
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,12 +26,12 @@
     </head>
     <!-- fragmento gerenciado pelo controller FotosController -->
     <body>
-      
+
         <!--  ng-controller="FotosController" para a ser setado no sistema de rotas do Angular -->
         <!-- todos elementos terão acesso ao que foi adicionado ao escopo do controller -->
         <div class="container">
 
-          <!-- ng-view >> lacunas >> ng-view >> troca de html dinâmicamente-->
+          <!-- ng-view >> lacuna >> troca/insere conteúdo html dinâmicamente-->
           <!-- sistema de rotas >> modulo ngRoute -->
           <ng-view></ng-view>
 
