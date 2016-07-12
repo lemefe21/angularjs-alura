@@ -37,14 +37,27 @@ angular.module('minhasDiretivas', [])
     //directive difinition object - DDO
     return ddo;
 
+  })
+
+  .directive('minhaFoto', function(){
+
+    var ddo = {};
+    ddo.restrict = "AE";
+    ddo.scope = {
+      titulo : '@',
+      url : '@'
+    };
+    ddo.templateUrl = 'js/directives/minha-foto.html';
+    return ddo;
+
   });
 
-//restrict >> E
+//restrict >> A
 //<div meu-painel="">
 
 //</div>
 
-//restrict >> A
+//restrict >> E
 //<meu-painel titulo="imagen001"> //titulo >> interface de comunicação com a diretiva
                                 //maneira como é passado o dado para dentro do escopo
                                 //privado da diretiva
