@@ -30,7 +30,8 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
     });
 
     $routeProvider.when('/fotos/new', {
-      templateUrl: 'partials/foto.html'
+      templateUrl: 'partials/foto.html',
+      controller: 'FotoController'
     });
 
     //caso não foi localizada a rota informada na url
