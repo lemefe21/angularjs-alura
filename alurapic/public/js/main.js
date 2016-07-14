@@ -7,6 +7,14 @@
 
 angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
+  .service('fotoService', function(){
+
+    var data = {}; //private variable
+
+    this.dataObject = data; //public API
+
+  })
+
   //configura rotas que rodam no client >> $routeProvider
   .config(function($routeProvider, $locationProvider){
 

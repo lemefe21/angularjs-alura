@@ -2,19 +2,28 @@
     <h1>Nova foto: {{foto.titulo}}</h1>
   </div>
 
-  <form ng-submit="submeter()" name="formulario" class="row">
+  <p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+  <form novalidate ng-submit="submeter()" name="formulario" class="row">
+
+    <!-- novalidade >> desabilita a validação do HTML5 -->
 
     <div class="col-md-6">
 
       <div class="form-group">
         <label>Título</label>
         <!-- $scope.foto = {}; -->
-        <input ng-model="foto.titulo" name="titulo" class="form-control">
+        <input ng-model="foto.titulo" name="titulo" class="form-control" required ng-maxlength="20">
+        <!-- exibição condicional -->
+        <!-- acesso via atributo name dos elementos -->
+        <span ng-show="formulario.$submitted && formulario.titulo.$error.required" class="form-control alert-danger">Título obrigatório</span>
+        <span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength" class="form-control alert-danger">Deve ter no máximo 20 caracteres</span>
       </div>
 
       <div class="form-group">
         <label>URL</label>
-        <input ng-model="foto.url" name="url" class="form-control">
+        <input ng-model="foto.url" name="url" class="form-control" required>
+        <span ng-show="formulario.$submitted && formulario.url.$error.required" class="form-control alert-danger">URL obrigatória</span>
       </div>
 
       <div class="form-group">
@@ -22,7 +31,7 @@
         <textarea ng-model="foto.descricao" name="descricao" class="form-control"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button ng-disabled="formulario.$invalid" type="submit" class="btn btn-primary">Salvar</button>
 
       <!-- na tag a >> ng-click="funcaoQualquer()" -->
       <a href="/" class="btn btn-primary">Voltar</a>

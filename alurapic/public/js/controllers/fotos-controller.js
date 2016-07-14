@@ -1,6 +1,6 @@
 //não estamos criando um controller com um modulo novo
 //estamos criando oo controller para o modulo alurapic já existente
-angular.module('alurapic').controller('FotosController', function($scope, $http) {
+angular.module('alurapic').controller('FotosController', function($scope, $http, fotoService) {
 
   //variavel privada, só existe dentro desse escopo
   //a view precisa acessar esse objeto
@@ -32,6 +32,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 
   //http://localhost:3000/v1/fotos
   $scope.fotos = [];
+  $scope.mensagem = fotoService.dataObj;
 
   //integração com backend
 
